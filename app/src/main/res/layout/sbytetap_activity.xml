@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundlain"
+    android:gravity="center">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="26dp"
+        android:gravity="center">
+
+
+    <Button
+        android:id="@+id/sinyal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/buttonradius"
+        android:layout_marginBottom="20dp"
+        android:text="Siyal" />
+
+    <Button
+        android:id="@+id/tandatatap"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/buttonradius"
+        android:text="Tanda" />
+
+    <Button
+        android:id="@+id/marka"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/buttonradius"
+        android:text="Marka" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
