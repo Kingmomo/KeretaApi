@@ -45,7 +45,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
             musik.setVisibility(View.GONE);
 
         }
-      
+
         musik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
