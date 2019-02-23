@@ -34,7 +34,7 @@ public class SemboyanSementaraActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SubLayoutActivity.class);
                 intent.putExtra("JUDUL", "Semboyan Terlihat");
-                intent.putExtra("DB", "stetapsinyal");
+                intent.putExtra("DB", "ssementaratanda");
                 startActivity(intent);
             }
         });

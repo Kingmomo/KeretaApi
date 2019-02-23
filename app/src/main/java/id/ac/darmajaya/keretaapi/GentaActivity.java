@@ -25,17 +25,17 @@ public class GentaActivity extends AppCompatActivity {
         setContentView(R.layout.langsir_activity);
 
 
-        recyclerView=(RecyclerView) findViewById(R.id.rvWord);
+        recyclerView = (RecyclerView) findViewById(R.id.rvWord);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(getApplicationContext(),DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(itemDecoration);
 
-        mDBHelper=new DatabaseHelper(getApplicationContext());
+        mDBHelper = new DatabaseHelper(getApplicationContext());
 
-        SemboyanModelList=mDBHelper.getdata(getIntent().getStringExtra("DB"));
+        SemboyanModelList = mDBHelper.getdata(getIntent().getStringExtra("DB"));
 
-        word_adapter=new PencarianAdapter();
+        word_adapter = new PencarianAdapter();
         word_adapter.setData(SemboyanModelList);
         recyclerView.setAdapter(word_adapter);
 

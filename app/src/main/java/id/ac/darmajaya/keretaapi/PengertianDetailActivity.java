@@ -11,7 +11,7 @@ public class PengertianDetailActivity extends AppCompatActivity {
         setContentView(R.layout.pengertian_detail);
 
         TextView judul = (TextView) findViewById(R.id.judul);
-        TextView deskripsi= (TextView) findViewById(R.id.deskripsi);
+        TextView deskripsi = (TextView) findViewById(R.id.deskripsi);
 
         judul.setText(getIntent().getStringExtra("JUDUL"));
         deskripsi.setText(getIntent().getStringExtra("DESKRIPSI"));

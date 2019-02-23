@@ -9,25 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".MainActivity"
+            android:label="PT. Kereta Api Indonesia"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-        </activity>
 
-
-        <activity android:name=".MainActivity"
-            android:label="PT. Kereta Api Indonesia"
-            >
-
-        <meta-data
-            android:name="android.app.default_searchable"
-            android:value=".PencarianActivity" />
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".PencarianActivity" />
 
         </activity>
+
         <activity
             android:name=".PencarianActivity"
             android:label="Pencarian"
@@ -45,17 +42,17 @@
 
         <activity
             android:name=".JalurkaActivity"
-            android:label="Pencarian"
+            android:label="Semboyan Kereta Api"
             android:parentActivityName=".MainActivity"/>
 
         <activity
             android:name=".SemboyanJalur.SemboyanSementaraActivity"
-            android:label="Pencarian"
+            android:label="Semboyan Kereta Api"
             android:parentActivityName=".MainActivity"/>
 
         <activity
             android:name=".SemboyanJalur.SemboyanTetapActivity"
-            android:label="Pencarian"
+            android:label="Semboyan Kereta Api"
             android:parentActivityName=".MainActivity"/>
 
         <activity
@@ -78,14 +75,10 @@
             android:label="Pengertian dari Semboyan"
             android:parentActivityName=".MainActivity"/>
 
-        <activity
-            android:name=".PengertianDetailActivity"
-            android:label="Penjelasan"
-            android:parentActivityName=".PengertianActivity"/>
 
         <activity
             android:name=".SubLayoutActivity"
-            android:label="Penjelasan"
+            android:label="Semboyan Kereta Api"
             android:parentActivityName=".PengertianActivity"/>
 
         <activity
@@ -95,8 +88,12 @@
 
         <activity
             android:name=".PencarianDetailActivity"
-            android:label="Penjelasan Semboyan"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Penjelasan Semboyan" />
+
+        <activity
+            android:name=".PengertianDetailActivity"
+            android:label="Penjelasan"
+            android:parentActivityName=".PengertianActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

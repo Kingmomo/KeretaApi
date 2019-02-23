@@ -1,13 +1,10 @@
 package id.ac.darmajaya.keretaapi;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Button;
 
 import java.util.List;
 
@@ -28,21 +25,19 @@ public class LangsirActivity extends AppCompatActivity {
         setContentView(R.layout.langsir_activity);
 
 
-        recyclerView=(RecyclerView) findViewById(R.id.rvWord);
+        recyclerView = (RecyclerView) findViewById(R.id.rvWord);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(getApplicationContext(),DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(itemDecoration);
 
-        mDBHelper=new DatabaseHelper(getApplicationContext());
+        mDBHelper = new DatabaseHelper(getApplicationContext());
 
-        SemboyanModelList=mDBHelper.getdata(getIntent().getStringExtra("DB"));
+        SemboyanModelList = mDBHelper.getdata(getIntent().getStringExtra("DB"));
 
-        word_adapter=new PencarianAdapter();
+        word_adapter = new PencarianAdapter();
         word_adapter.setData(SemboyanModelList);
         recyclerView.setAdapter(word_adapter);
-
-
 
 
     }

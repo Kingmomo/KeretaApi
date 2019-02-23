@@ -51,7 +51,6 @@ public class PencarianAdapter extends RecyclerView.Adapter<PencarianAdapter.View
             super(itemView);
             this.context=context;
             wordText=(TextView) itemView.findViewById(R.id.singkatantv);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

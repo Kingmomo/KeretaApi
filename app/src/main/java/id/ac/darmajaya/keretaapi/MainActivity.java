@@ -4,8 +4,8 @@ import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button pencarian = (Button) findViewById(R.id.pencarian);
+//        Button pencarian = (Button) findViewById(R.id.pencarian);
         Button jalurka = (Button) findViewById(R.id.jalurka);
         Button keretaapi = (Button) findViewById(R.id.keretaapi);
         Button langsir = (Button) findViewById(R.id.langsir);
@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
         database();
 
 
-        pencarian.setOnClickListener(new View.OnClickListener() {
+/*        pencarian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), PencarianActivity.class));
             }
-        });
+        });*/
 
         jalurka.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,12 +96,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void database(){
+    private void database() {
         db = new DatabaseHelper(this);
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DBNAME);
         if (database.exists()) {
             db.getReadableDatabase();
-            if (db.copyDatabase(this)){
+            db.close();
+            if (db.copyDatabase(this)) {
                 //Toast.makeText(getApplicationContext(), "Copy success", Toast.LENGTH_LONG).show();
             } else {
                 //Toast.makeText(getApplicationContext(), "Copy failed", Toast.LENGTH_LONG).show();
@@ -110,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if (!database.exists()) {
             db.getReadableDatabase();
-            if (db.copyDatabase(this)){
+            db.close();
+            if (db.copyDatabase(this)) {
                 //Toast.makeText(getApplicationContext(), "Copy success", Toast.LENGTH_LONG).show();
             } else {
                 //Toast.makeText(getApplicationContext(), "Copy failed", Toast.LENGTH_LONG).show();

@@ -8,11 +8,9 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
-import id.ac.darmajaya.keretaapi.Adapter.PencarianAdapter;
 import id.ac.darmajaya.keretaapi.Adapter.PengertianAdapter;
 import id.ac.darmajaya.keretaapi.Database.DatabaseHelper;
 import id.ac.darmajaya.keretaapi.Model.Pengertian;
-import id.ac.darmajaya.keretaapi.Model.Semboyan;
 
 public class PengertianActivity extends AppCompatActivity {
 
@@ -27,17 +25,17 @@ public class PengertianActivity extends AppCompatActivity {
         setContentView(R.layout.pengertian_activity);
 
 
-        recyclerView=(RecyclerView) findViewById(R.id.rvWord);
+        recyclerView = (RecyclerView) findViewById(R.id.rvWord);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(getApplicationContext(),DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(itemDecoration);
 
-        mDBHelper=new DatabaseHelper(getApplicationContext());
+        mDBHelper = new DatabaseHelper(getApplicationContext());
 
-        PengertianModelList=mDBHelper.getkereta();
+        PengertianModelList = mDBHelper.getkereta();
 
-        word_adapter=new PengertianAdapter();
+        word_adapter = new PengertianAdapter();
         word_adapter.setData(PengertianModelList);
         recyclerView.setAdapter(word_adapter);
 
