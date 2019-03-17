@@ -8,14 +8,16 @@ public class Semboyan {
     private String kategori;
     private String gambar;
     private String musik;
+    private String musik2;
 
-    public Semboyan(int id, String singkatan, String penjelasan, String kategori, String gambar, String musik) {
+    public Semboyan(int id, String singkatan, String penjelasan, String kategori, String gambar, String musik, String musik2) {
         this.id = id;
         this.singkatan = singkatan;
         this.penjelasan = penjelasan;
         this.kategori = kategori;
         this.gambar = gambar;
         this.musik = musik;
+        this.musik2 = musik2;
     }
 
     public int getId() {
@@ -66,5 +68,11 @@ public class Semboyan {
         this.musik = musik;
     }
 
+    public String getMusik2() {
+        return musik2;
+    }
 
+    public void setMusik2(String musik2) {
+        this.musik2 = musik2;
+    }
 }

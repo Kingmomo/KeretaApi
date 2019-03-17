@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:label="PT. Kereta Api Indonesia"
-            >
+        <activity
+            android:name=".MainActivity"
+            android:label="Kamus Semboyan PT. Kereta Api Indonesia (Persero)"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +29,8 @@
         <activity
             android:name=".PencarianActivity"
             android:label="Pencarian"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
 
@@ -43,65 +45,74 @@
         <activity
             android:name=".JalurkaActivity"
             android:label="Semboyan Kereta Api"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".SemboyanJalur.SemboyanSementaraActivity"
             android:label="Semboyan Kereta Api"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".SemboyanJalur.SemboyanTetapActivity"
             android:label="Semboyan Kereta Api"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".KeretaapiActivity"
             android:label="Semboyan Kereta Api"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".LangsirActivity"
             android:label="Semboyan Langsir"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".GentaActivity"
             android:label="Semboyan Genta"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".PengertianActivity"
             android:label="Pengertian dari Semboyan"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
 
         <activity
             android:name=".SubLayoutActivity"
             android:label="Semboyan Kereta Api"
-            android:parentActivityName=".PengertianActivity"/>
+            android:parentActivityName=".PengertianActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".TentangAplikasi"
             android:label="Tentang Aplikasi"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".PencarianDetailActivity"
-            android:label="Penjelasan Semboyan" />
+            android:label="Penjelasan Semboyan"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".PengertianDetailActivity"
             android:label="Penjelasan"
-            android:parentActivityName=".PengertianActivity"/>
+            android:parentActivityName=".PengertianActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"
+            android:screenOrientation="portrait" />
 
 
     </application>
-
-
-
 </manifest>

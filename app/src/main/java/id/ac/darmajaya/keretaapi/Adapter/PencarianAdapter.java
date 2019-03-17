@@ -62,6 +62,7 @@ public class PencarianAdapter extends RecyclerView.Adapter<PencarianAdapter.View
                     intent.putExtra("PENJELASAN",Semboyan.getPenjelasan());
                     intent.putExtra("GAMBAR",Semboyan.getGambar());
                     intent.putExtra("MUSIK", Semboyan.getMusik());
+                    intent.putExtra("MUSIK2", Semboyan.getMusik2());
                     context.startActivity(intent);
                 }
             });

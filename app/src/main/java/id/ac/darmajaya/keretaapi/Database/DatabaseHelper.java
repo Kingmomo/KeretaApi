@@ -83,7 +83,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             dictionaryModel=new Semboyan(cursor.getInt(0),cursor.getString(1),cursor.getString(2),
-                    cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                    cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
             dictionaryModelList.add(dictionaryModel);
             cursor.moveToNext();
         }
@@ -102,7 +102,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             dictionaryModel=new Semboyan(cursor.getInt(0),cursor.getString(1),cursor.getString(2), cursor.getString(3)
-                    , cursor.getString(4), cursor.getString(5));
+                    , cursor.getString(4), cursor.getString(5), cursor.getString(6));
             dictionaryModelList.add(dictionaryModel);
             cursor.moveToNext();
         }
@@ -125,7 +125,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             dictionaryModel=new Semboyan(cursor.getInt(0),cursor.getString(1),cursor.getString(2), cursor.getString(3)
-                    , cursor.getString(4), cursor.getString(5));
+                    , cursor.getString(4), cursor.getString(5), cursor.getString(6));
             dictionaryModelList.add(dictionaryModel);
             cursor.moveToNext();
         }
@@ -143,7 +143,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor=mDatabase.rawQuery("Select * From pengertian order by judul asc", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            dictionaryModel=new Pengertian(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+            dictionaryModel=new Pengertian(cursor.getInt(0),cursor.getString(1),cursor.getString(2), cursor.getString(3));
             dictionaryModelList.add(dictionaryModel);
             cursor.moveToNext();
         }

@@ -59,6 +59,7 @@ public class PengertianAdapter extends RecyclerView.Adapter<PengertianAdapter.Vi
                     Intent intent=new Intent(context, PengertianDetailActivity.class);
                     intent.putExtra("JUDUL",Pengertian.getPengertian());
                     intent.putExtra("DESKRIPSI",Pengertian.getDeskripsi());
+                    intent.putExtra("MUSIK",Pengertian.getMusik());
                     context.startActivity(intent);
 
                 }

@@ -5,11 +5,13 @@ public class Pengertian {
     private int id;
     private String pengertian;
     private String deskripsi;
+    private String musik;
 
-    public Pengertian(int id, String pengertian, String deskripsi) {
+    public Pengertian(int id, String pengertian, String deskripsi, String musik) {
         this.id = id;
         this.pengertian = pengertian;
         this.deskripsi = deskripsi;
+        this.musik = musik;
     }
 
     public int getId() {
@@ -36,4 +38,11 @@ public class Pengertian {
         this.deskripsi = deskripsi;
     }
 
+    public String getMusik() {
+        return musik;
+    }
+
+    public void setMusik(String musik) {
+        this.musik = musik;
+    }
 }
