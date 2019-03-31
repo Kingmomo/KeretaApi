@@ -4,18 +4,13 @@ import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.SearchView;
 
 import java.io.File;
@@ -117,8 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return;
 
-        }
-        else {
+        } else {
             db.getReadableDatabase();
             db.close();
             db.copyDatabase(this);
@@ -138,9 +132,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setQueryHint("Cari Data");
         searchView.setMaxWidth(Integer.MAX_VALUE);
 
-
-
-        //searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         ComponentName cn = new ComponentName(this, PencarianActivity.class);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(cn));
 

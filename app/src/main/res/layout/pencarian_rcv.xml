@@ -13,8 +13,8 @@
         android:id="@+id/singkatantv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/droid_sans"
-        android:text="SingkatanTv"
-        android:textSize="20sp" />
+        android:fontFamily="@font/open_sans"
+        android:text="Semboyan"
+        android:textSize="16sp" />
 
 </LinearLayout>

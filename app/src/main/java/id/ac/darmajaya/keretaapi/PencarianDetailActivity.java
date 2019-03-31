@@ -14,6 +14,8 @@ import com.squareup.picasso.Picasso;
 public class PencarianDetailActivity extends AppCompatActivity {
 
     private MediaPlayer ring, ring2;
+    private int mstatus = 0, mstatus2 = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,10 @@ public class PencarianDetailActivity extends AppCompatActivity {
         musik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int mstatus = 0;
-
                 if (mstatus == 0) {
                     ring = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/raw/" + getIntent().getStringExtra("MUSIK")));
                     ring.start();
+                    mstatus = 1;
                     musik.setImageResource(R.drawable.ic_stop);
                     if (ring2 != null) {
                         ring2.stop();
@@ -51,6 +52,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
 
                 } else {
                     ring.stop();
+                    mstatus = 0;
                     musik.setImageResource(R.drawable.ic_play);
                 }
             }
@@ -65,10 +67,10 @@ public class PencarianDetailActivity extends AppCompatActivity {
         musik_penjelasan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int mstatus2 = 0;
                 if (mstatus2 == 0) {
                     ring2 = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/raw/" + getIntent().getStringExtra("MUSIK2")));
                     ring2.start();
+                    mstatus2 = 1;
                     musik_penjelasan.setImageResource(R.drawable.ic_stop);
                     if (ring != null) {
                         ring.stop();
@@ -79,6 +81,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
 
                 } else {
                     ring2.stop();
+                    mstatus2 = 0;
                     musik_penjelasan.setImageResource(R.drawable.ic_play);
 
                 }

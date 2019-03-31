@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 public class PengertianDetailActivity extends AppCompatActivity {
     private MediaPlayer ring;
+    private int mstatus = 0;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,6 @@ public class PengertianDetailActivity extends AppCompatActivity {
         musik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int mstatus = 0;
 
                 if (mstatus == 0) {
                     ring = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/raw/" + getIntent().getStringExtra("MUSIK")));
