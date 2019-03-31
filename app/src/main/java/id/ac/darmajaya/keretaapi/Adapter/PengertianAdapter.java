@@ -16,7 +16,7 @@ import id.ac.darmajaya.keretaapi.R;
 
 public class PengertianAdapter extends RecyclerView.Adapter<PengertianAdapter.ViewHolder> {
 
-    public List<Pengertian> data;
+    private List<Pengertian> data;
 
     public PengertianAdapter(){}
     public void setData(List<Pengertian> data){
@@ -43,10 +43,10 @@ public class PengertianAdapter extends RecyclerView.Adapter<PengertianAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public Context context;
-        public TextView wordText;
+        private Context context;
+        private TextView wordText;
 
-        public ViewHolder(View itemView, final Context context) {
+        private ViewHolder(View itemView, final Context context) {
             super(itemView);
             this.context=context;
             wordText=(TextView) itemView.findViewById(R.id.pengertiantv);

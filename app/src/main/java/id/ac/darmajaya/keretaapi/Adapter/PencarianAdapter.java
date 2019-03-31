@@ -18,9 +18,9 @@ import id.ac.darmajaya.keretaapi.R;
 
 public class PencarianAdapter extends RecyclerView.Adapter<PencarianAdapter.ViewHolder> {
 
-    public List<Semboyan> data;
-
+    private List<Semboyan> data;
     public PencarianAdapter(){}
+
     public void setData(List<Semboyan> data){
         this.data=data;
     }
@@ -45,9 +45,10 @@ public class PencarianAdapter extends RecyclerView.Adapter<PencarianAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public Context context;
-        public TextView wordText;
-        public ViewHolder(View itemView, final Context context) {
+        private Context context;
+        private TextView wordText;
+
+        private ViewHolder(View itemView, final Context context) {
             super(itemView);
             this.context=context;
             wordText=(TextView) itemView.findViewById(R.id.singkatantv);

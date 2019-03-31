@@ -15,7 +15,6 @@ public class PencarianDetailActivity extends AppCompatActivity {
 
     private MediaPlayer ring, ring2;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +52,6 @@ public class PencarianDetailActivity extends AppCompatActivity {
                 } else {
                     ring.stop();
                     musik.setImageResource(R.drawable.ic_play);
-
                 }
             }
         });
