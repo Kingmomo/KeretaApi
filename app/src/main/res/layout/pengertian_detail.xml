@@ -54,7 +54,6 @@
             android:src="@drawable/ic_play" />
     </LinearLayout>
 
-
     <TextView
         android:id="@+id/deskripsi"
         android:layout_width="match_parent"

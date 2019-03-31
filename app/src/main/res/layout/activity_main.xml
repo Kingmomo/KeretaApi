@@ -1,94 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background"
-    tools:context=".MainActivity">
-<!--
-    <Button
-        android:id="@+id/pencarian"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/isyarat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
+    android:background="@drawable/background">
 
-    <Button
-        android:id="@+id/jalurka"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/jalur"
-        app:layout_constraintBottom_toTopOf="@+id/langsir"
-        app:layout_constraintEnd_toStartOf="@+id/keretaapi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        android:theme="@style/AppToolbar"
+        />
 
-    <Button
-        android:id="@+id/keretaapi"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/ka"
-        app:layout_constraintBottom_toTopOf="@+id/genta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/jalurka"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+<Button
+    android:id="@+id/pencarian"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/isyarat"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/langsir"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/langsir"
-        app:layout_constraintEnd_toStartOf="@+id/genta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jalurka" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="?attr/actionBarSize">
 
-    <Button
-        android:id="@+id/genta"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/genta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/langsir"
-        app:layout_constraintTop_toBottomOf="@+id/keretaapi" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/pengertian"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/pengertian"
-        app:layout_constraintEnd_toStartOf="@+id/tentang"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/langsir" />
+            <Button
+                android:id="@+id/jalurka"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/jalur" />
 
-    <Button
-        android:id="@+id/tentang"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/tentang"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pengertian"
-        app:layout_constraintTop_toBottomOf="@+id/genta" />
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"/>
+
+            <Button
+                android:id="@+id/keretaapi"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/ka" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/langsir"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/langsir" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"/>
+
+            <Button
+                android:id="@+id/genta"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/genta" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pengertian"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/pengertian" />
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"/>
+
+            <Button
+                android:id="@+id/tentang"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/tentang" />
+
+        </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

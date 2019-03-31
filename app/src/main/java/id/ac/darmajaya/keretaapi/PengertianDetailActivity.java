@@ -9,9 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PengertianDetailActivity extends AppCompatActivity {
-
-    private ImageView musik;
-    private int mstatus = 0;
     private MediaPlayer ring;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +17,9 @@ public class PengertianDetailActivity extends AppCompatActivity {
 
         TextView judul = (TextView) findViewById(R.id.judul);
         TextView deskripsi = (TextView) findViewById(R.id.deskripsi);
-        musik = (ImageView) findViewById(R.id.musik_penjelasan);
         final String datamusik = getIntent().getStringExtra("MUSIK");
+        final ImageView musik = (ImageView) findViewById(R.id.musik_penjelasan);
+
 
         judul.setText(getIntent().getStringExtra("JUDUL"));
         deskripsi.setText(getIntent().getStringExtra("DESKRIPSI"));
@@ -34,20 +32,30 @@ public class PengertianDetailActivity extends AppCompatActivity {
         musik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int mstatus = 0;
 
                 if (mstatus == 0) {
                     ring = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/raw/" + getIntent().getStringExtra("MUSIK")));
                     ring.start();
                     mstatus = 1;
                     musik.setImageResource(R.drawable.ic_stop);
-
                 } else {
                     ring.stop();
                     musik.setImageResource(R.drawable.ic_play);
                     mstatus = 0;
+
                 }
             }
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (ring != null) {
+            ring.stop();
+            ring.release();
+            ring = null;
+        }
+    }
 }

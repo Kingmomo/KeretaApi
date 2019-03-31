@@ -14,16 +14,14 @@ import id.ac.darmajaya.keretaapi.Model.Semboyan;
 
 public class LangsirActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private PencarianAdapter word_adapter;
-    private List<Semboyan> SemboyanModelList;
-    private DatabaseHelper mDBHelper;
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.langsir_activity);
 
+        RecyclerView recyclerView;
+        PencarianAdapter word_adapter;
+        List<Semboyan> SemboyanModelList;
+        DatabaseHelper mDBHelper;
 
         recyclerView = (RecyclerView) findViewById(R.id.rvWord);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

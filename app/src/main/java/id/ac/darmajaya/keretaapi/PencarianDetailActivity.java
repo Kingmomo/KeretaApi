@@ -13,11 +13,7 @@ import com.squareup.picasso.Picasso;
 
 public class PencarianDetailActivity extends AppCompatActivity {
 
-    private ImageView musik, musik_penjelasan;
-    private int mstatus = 0, mstatus2 = 0;
     private MediaPlayer ring, ring2;
-
-
 
 
     @Override
@@ -27,9 +23,9 @@ public class PencarianDetailActivity extends AppCompatActivity {
 
         TextView singkatan = (TextView) findViewById(R.id.singkatan);
         TextView penjelasan = (TextView) findViewById(R.id.penjelasan);
-        ImageView gambar = (ImageView) findViewById(R.id.gambar);
-        musik = (ImageView) findViewById(R.id.musik);
-        musik_penjelasan = (ImageView) findViewById(R.id.musik_penjelasan);
+        final ImageView gambar = (ImageView) findViewById(R.id.gambar);
+        final ImageView musik = (ImageView) findViewById(R.id.musik);
+        final ImageView musik_penjelasan = (ImageView) findViewById(R.id.musik_penjelasan);
         final String datamusik = getIntent().getStringExtra("MUSIK");
         final String datamusik2 = getIntent().getStringExtra("MUSIK2");
 
@@ -41,18 +37,23 @@ public class PencarianDetailActivity extends AppCompatActivity {
         musik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                int mstatus = 0;
 
                 if (mstatus == 0) {
                     ring = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/raw/" + getIntent().getStringExtra("MUSIK")));
                     ring.start();
-                    mstatus = 1;
                     musik.setImageResource(R.drawable.ic_stop);
+                    if (ring2 != null) {
+                        ring2.stop();
+                        ring2.release();
+                        ring2 = null;
+                        musik_penjelasan.setImageResource(R.drawable.ic_play);
+                    }
 
                 } else {
                     ring.stop();
                     musik.setImageResource(R.drawable.ic_play);
-                    mstatus = 0;
+
                 }
             }
         });
@@ -66,18 +67,22 @@ public class PencarianDetailActivity extends AppCompatActivity {
         musik_penjelasan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                int mstatus2 = 0;
                 if (mstatus2 == 0) {
                     ring2 = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/raw/" + getIntent().getStringExtra("MUSIK2")));
                     ring2.start();
-                    mstatus2 = 1;
                     musik_penjelasan.setImageResource(R.drawable.ic_stop);
+                    if (ring != null) {
+                        ring.stop();
+                        ring.release();
+                        ring = null;
+                        musik.setImageResource(R.drawable.ic_play);
+                    }
 
                 } else {
                     ring2.stop();
-                    mstatus2 = 0;
                     musik_penjelasan.setImageResource(R.drawable.ic_play);
+
                 }
             }
         });
@@ -94,12 +99,18 @@ public class PencarianDetailActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-//        if (!datamusik.equals("") || datamusik != null & mstatus2 == 0 ) {
-//            ring2.stop();
-//            mstatus2 = 0;
-//            musik_penjelasan.setImageResource(R.drawable.ic_play);
-//        }
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (ring != null) {
+            ring.stop();
+            ring.release();
+            ring = null;
+        }
+        if (ring2 != null) {
+            ring2.stop();
+            ring2.release();
+            ring2 = null;
+        }
+
     }
 }

@@ -14,16 +14,14 @@ import id.ac.darmajaya.keretaapi.Model.Pengertian;
 
 public class PengertianActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private PengertianAdapter word_adapter;
-    private List<Pengertian> PengertianModelList;
-    private DatabaseHelper mDBHelper;
-
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pengertian_activity);
-
+        RecyclerView recyclerView;
+        PengertianAdapter word_adapter;
+        List<Pengertian> PengertianModelList;
+        DatabaseHelper mDBHelper;
 
         recyclerView = (RecyclerView) findViewById(R.id.rvWord);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
