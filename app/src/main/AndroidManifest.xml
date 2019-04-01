@@ -85,7 +85,6 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
-
         <activity
             android:name=".SubLayoutActivity"
             android:label="Semboyan Kereta Api"
@@ -108,12 +107,17 @@
             android:label="Penjelasan"
             android:parentActivityName=".PengertianActivity"
             android:screenOrientation="portrait" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"
             android:screenOrientation="portrait" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2581554412013428~5274222570"/>
 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
     </application>
 </manifest>

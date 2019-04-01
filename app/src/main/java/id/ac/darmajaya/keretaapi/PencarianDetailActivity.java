@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.squareup.picasso.Picasso;
 
 
@@ -26,7 +30,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
         TextView penjelasan = (TextView) findViewById(R.id.penjelasan);
         final ImageView gambar = (ImageView) findViewById(R.id.gambar);
         final ImageView musik = (ImageView) findViewById(R.id.musik);
-        final ImageView musik_penjelasan = (ImageView) findViewById(R.id.musik_penjelasan);
+//        final ImageView musik_penjelasan = (ImageView) findViewById(R.id.musik_penjelasan);
         final String datamusik = getIntent().getStringExtra("MUSIK");
         final String datamusik2 = getIntent().getStringExtra("MUSIK2");
 
@@ -47,7 +51,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
                         ring2.stop();
                         ring2.release();
                         ring2 = null;
-                        musik_penjelasan.setImageResource(R.drawable.ic_play);
+//                        musik_penjelasan.setImageResource(R.drawable.ic_play);
                     }
 
                 } else {
@@ -59,7 +63,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
         });
 
         //musik penjelasan
-        if (datamusik2.equals("") || datamusik2 == null) {
+      /*  if (datamusik2.equals("") || datamusik2 == null) {
             musik_penjelasan.setVisibility(View.GONE);
 
         }
@@ -86,7 +90,7 @@ public class PencarianDetailActivity extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
 
 
         singkatan.setText(getIntent().getStringExtra("SINGKATAN"));
@@ -96,6 +100,43 @@ public class PencarianDetailActivity extends AppCompatActivity {
                 .load("file:///android_asset/gambar/" + getIntent().getStringExtra("GAMBAR"))
                 .into(gambar);
 
+
+
+        MobileAds.initialize(this, "ca-app-pub-2581554412013428~5274222570");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
+
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        });
 
     }
 
@@ -107,11 +148,11 @@ public class PencarianDetailActivity extends AppCompatActivity {
             ring.release();
             ring = null;
         }
-        if (ring2 != null) {
+ /*       if (ring2 != null) {
             ring2.stop();
             ring2.release();
             ring2 = null;
-        }
+        }*/
 
     }
 }

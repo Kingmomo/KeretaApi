@@ -9,6 +9,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdView;
+
 import java.util.List;
 
 import id.ac.darmajaya.keretaapi.Adapter.PencarianAdapter;

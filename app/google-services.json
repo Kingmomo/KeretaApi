@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "861289617034",
+    "firebase_url": "https://keretaapi-5ddba.firebaseio.com",
+    "project_id": "keretaapi-5ddba",
+    "storage_bucket": "keretaapi-5ddba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861289617034:android:3b312fb17714242f",
+        "android_client_info": {
+          "package_name": "id.ac.darmajaya.keretaapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861289617034-95j5b8plkqpkv34ng8sb99g9e7qd510p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.darmajaya.keretaapi",
+            "certificate_hash": "d901716ec210b5b45780d46fa5e0d7dd603ad100"
+          }
+        },
+        {
+          "client_id": "861289617034-0dnk3jg1hqjqr5iq8m9ihlk8ouro0jnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0l-blf9oae-HsYBN5oIXk8J_VocYJgpA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861289617034-0dnk3jg1hqjqr5iq8m9ihlk8ouro0jnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
