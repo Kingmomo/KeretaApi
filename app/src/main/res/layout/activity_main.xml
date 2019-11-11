@@ -129,5 +129,4 @@
         android:layout_gravity="center|bottom"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
-
 </RelativeLayout>
